@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "OCR A Extended";
+  src: url("/fonts/Ocr.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat.ttf");
+}
+
+@theme {
+  --color-theme-400: #4ad827;
+
+  --font-head: "OCR A Extended", "Fira Sans", sans-serif;
+  --font-text: "Montserrat", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+  :root {
+    @apply font-text;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    font-weight: 500;
+    color: #4ad827;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #37bb1c;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-head;
+    font-size: revert !important;
+    font-weight: revert !important;
+  }
+
+  button {
+    border-radius: 8px;
+    border: 2px solid white;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #4ad827;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a {
+      color: #3eb421;
+    }
+    a:hover {
+      color: #2e8f14;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
+  }
+}
